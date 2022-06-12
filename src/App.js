@@ -9,6 +9,7 @@ import Home from './pages/Welcome/Home';
 import Profile from './component/Profile';
 import UserPosts from './component/UserPosts';
 import { Provider as NotesProvider } from './context/notesContext';
+import AdminProfile from './component/AdminProfile';
 // import PostForm from './component/PostForm';
 // import Home from './pages/Welcome/Home';
 
@@ -30,9 +31,9 @@ function App() {
 						<Route path="/profile/:userId">
 							<Profile />
 						</Route> 
-						{/* <Route path="/adminprofile/:userId">
+						<Route path="/adminprofile/:userId">
 							<AdminProfile />
-						</Route> */}
+						</Route>
 						<Route path="/user/post/:userId">
 							<UserPosts />
 						</Route>
