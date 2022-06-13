@@ -1,4 +1,4 @@
-// import { createPath } from 'react-router';
+import { Redirect } from 'react-router';
 export const isAuthenticated = () => {
 	if (typeof window == 'undefined') {
 		return false;
@@ -19,6 +19,6 @@ export const signout = () => {
 		localStorage.removeItem('name');
 		localStorage.removeItem('lastname');
 
-		<createPath to="/" />;
+		<Redirect to="/" />;
 	}
 };

@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 // import './signUpForm.css';
 import { Context as authContext } from '../context/authContext';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { isAuthenticated } from '../middlewares/authMiddleware';
 
 export default function SignUpForm() {
@@ -13,10 +13,10 @@ export default function SignUpForm() {
 	const { signup, state } = useContext(authContext);
 
 	// if (state.didRedirect) {
-	//   return <Link to="/" />;
+	//   return <Redirect to="/" />;
 	// }
 	if (isAuthenticated()) {
-		return <Link to="/" />;
+		return <Redirect to="/" />;
 	}
 
 	return (

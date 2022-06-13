@@ -30,7 +30,7 @@ const createNotes = (dispatch) => {
 		console.log('manish');
 
 		console.log(title, description, content, semester, branch, subject, userId);
-		// const token = localStorage.getItem('token');
+		const token = localStorage.getItem('token');
 		await api
 			.post(`${API}/post/create/${userId}`, {
 				title,

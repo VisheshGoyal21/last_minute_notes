@@ -1,5 +1,5 @@
 import { useContext, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import { Context as authContext } from '../context/authContext';
 import { isAuthenticated } from '../middlewares/authMiddleware';
 
@@ -10,7 +10,7 @@ const SignInForm = () => {
 	const { signin, state } = useContext(authContext);
 
 	if (isAuthenticated()) {
-		return <Link to="/" />;
+		return <Redirect to="/" />;
 	}
 
 	const handleSubmit = (event) => {

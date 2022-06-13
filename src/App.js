@@ -1,7 +1,5 @@
-// import logo from './logo.svg';
-import './App.css';
 import { Provider as AuthProvider } from './context/authContext';
-import {Route} from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import Layout from './component/Layout';
 import Signup from './pages/Auth/Signup';
 import Signin from './pages/Auth/Signin';
@@ -10,13 +8,11 @@ import Profile from './component/Profile';
 import UserPosts from './component/UserPosts';
 import { Provider as NotesProvider } from './context/notesContext';
 import AdminProfile from './component/AdminProfile';
-// import PostForm from './component/PostForm';
-// import Home from './pages/Welcome/Home';
 
-function App() { 
-  return (
+function App() {
+	return (
 		<Layout>
-			<useOutlet>
+			<Switch>
 				<NotesProvider>
 					<AuthProvider>
 						<Route path="/" exact>
@@ -30,24 +26,24 @@ function App() {
 						</Route>
 						<Route path="/profile/:userId">
 							<Profile />
-						</Route> 
+						</Route>
 						<Route path="/adminprofile/:userId">
 							<AdminProfile />
 						</Route>
 						<Route path="/user/post/:userId">
 							<UserPosts />
-						</Route>
+						</Route> 
+						{/* <Route path='/' element={<Home/>} />
+						<Route path='/signup' element={<Signup/>} />
+						<Route path='/signin' element={<Signin/>} />
+						<Route path='/profile/:userId' element={<Profile/>} />
+						<Route path='/adminprofile/:userId' element={<AdminProfile/>} />
+						<Route path='/user/post/:userId' element={<UserPosts/>} /> */}
 					</AuthProvider>
 				</NotesProvider>
-			</useOutlet>
+			</Switch>
 		</Layout>
 	);
 }
-
-// function App() {
-//   return (
-//     <Home />
-//   );
-// }
 
 export default App;

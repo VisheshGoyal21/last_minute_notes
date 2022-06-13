@@ -1,9 +1,9 @@
 //import classes from "*.module.css";
 import { Fragment, useEffect, useState } from 'react';
-import { NavLink, Link, HashRouter } from 'react-router-dom';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 import { signout, isAuthenticated } from '../middlewares/authMiddleware';
 // import './MainNavigation.module.css';
-import { BrowserRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { Transition } from '@headlessui/react';
 
 const MainNavigation = () => {
@@ -11,7 +11,7 @@ const MainNavigation = () => {
 	const [help, setHelp] = useState(false);
 	const user = localStorage.getItem('user');
 	const role = localStorage.getItem('role');
-	const history = BrowserRouter();
+	const history = useHistory();
 
 	return (
 		<nav class="fixed flex items-center justify-between z-10 left-0 right-0 top-0 py-4 px-6 max-h-20 bg-cyan-700 shadow-xl">
@@ -181,4 +181,4 @@ const MainNavigation = () => {
 	);
 };
 
-export default HashRouter(MainNavigation);
+export default withRouter(MainNavigation);

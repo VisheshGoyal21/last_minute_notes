@@ -4,7 +4,7 @@ import Card from '../../component/Card';
 import SearchBar from '../../component/SearchBar';
 import CommentBox from '../../component/CommentBox';
 import Footer from '../../component/Footer';
-// import { matchRoutes, Link, NavLink } from 'react-router-dom';
+import { Redirect, Link, NavLink } from 'react-router-dom';
 
 const Home = () => {
 	const { filterNotes, state } = useContext(notesContext);
@@ -20,7 +20,7 @@ const Home = () => {
 	const uid = localStorage.getItem('user');
 	const url = '/profile/' + uid;
 
-	if (semester === 1 || semester === 2) {
+	if (semester == 1 || semester == 2) {
 		subjects = [
 			'Engg.Maths-1',
 			'Engg.Maths-2',
@@ -32,7 +32,7 @@ const Home = () => {
 			'Physics',
 			'C Programming',
 		];
-	} else if (semester === 3 && (branch === 'CSE' || branch === 'IT')) {
+	} else if (semester == 3 && (branch == 'CSE' || branch == 'IT')) {
 		subjects = [
 			'Engg.Maths-3',
 			'Digital Electronics',
@@ -41,7 +41,7 @@ const Home = () => {
 			'Software Engineering',
 			'Economics',
 		];
-	} else if (semester === 4 && (branch === 'CSE' || branch === 'IT')) {
+	} else if (semester == 4 && (branch == 'CSE' || branch == 'IT')) {
 		subjects = [
 			'DBMS',
 			'Networking',
@@ -49,7 +49,7 @@ const Home = () => {
 			'Discrete Mathematics',
 			'Microprocessors',
 		];
-	} else if (semester === 5 && (branch === 'CSE' || branch === 'IT')) {
+	} else if (semester == 5 && (branch == 'CSE' || branch == 'IT')) {
 		subjects = [
 			'Information Theory and coding',
 			'Compiler Design',
@@ -60,7 +60,7 @@ const Home = () => {
 			'Human Computer Interaction',
 			'Bioinformatics',
 		];
-	} else if (semester === 6 && (branch === 'CSE' || branch === 'IT')) {
+	} else if (semester == 6 && (branch == 'CSE' || branch == 'IT')) {
 		subjects = [
 			'Digital Image Processing',
 			'Machine Learning',
@@ -70,7 +70,7 @@ const Home = () => {
 			'Distributed System',
 			'Software Defined Network',
 		];
-	} else if (semester === 7 && (branch === 'CSE' || branch === 'IT')) {
+	} else if (semester == 7 && (branch == 'CSE' || branch == 'IT')) {
 		subjects = [
 			'Cloud computing',
 			'Information System Security',
@@ -81,7 +81,7 @@ const Home = () => {
 			'Robotics',
 			'Data Compression tecniques',
 		];
-	} else if (semester === 8 && (branch === 'CSE' || branch === 'IT')) {
+	} else if (semester == 8 && (branch == 'CSE' || branch == 'IT')) {
 		subjects = [
 			'Mobile Computing',
 			'Digital Image Processing',
@@ -91,7 +91,7 @@ const Home = () => {
 			'UNIX Network Programming And Simulation Lab',
 			'FPGA Lab',
 		];
-	} else if (semester === 3 && branch === 'ECE') {
+	} else if (semester == 3 && branch == 'ECE') {
 		subjects = [
 			'Advance Engineering Mathematics-I',
 			'Technical Communication',
@@ -101,7 +101,7 @@ const Home = () => {
 			'Electronic Devices',
 			'Electronics Devices Lab',
 		];
-	} else if (semester === 4 && branch === 'ECE') {
+	} else if (semester == 4 && branch == 'ECE') {
 		subjects = [
 			'Advance Engineering Mathematics-II',
 			'Managerial Economics And Financial Accounting',
@@ -110,7 +110,7 @@ const Home = () => {
 			'Microcontrollers',
 			'Electronics Measurement & Instrumentation',
 		];
-	} else if (semester === 5 && branch === 'ECE') {
+	} else if (semester == 5 && branch == 'ECE') {
 		subjects = [
 			'Computer Architecture',
 			'Electromagnetics Waves',
@@ -120,7 +120,7 @@ const Home = () => {
 			'Bio-Medical Electronics',
 			'Embedded Systems',
 		];
-	} else if (semester === 6 && branch === 'ECE') {
+	} else if (semester == 6 && branch == 'ECE') {
 		subjects = [
 			'Power Electronics',
 			'Computer Network',
@@ -130,7 +130,7 @@ const Home = () => {
 			'Introduction to MEMS',
 			'Nano Electronics',
 		];
-	} else if (semester === 7 && branch === 'ECE') {
+	} else if (semester == 7 && branch == 'ECE') {
 		subjects = [
 			'Antennas & Wave Propagation',
 			'Digital Signal Processing',
@@ -141,7 +141,7 @@ const Home = () => {
 			'Artificial Intelligence And Expert Systems',
 			'VHDL',
 		];
-	} else if (semester === 8 && branch === 'ECE') {
+	} else if (semester == 8 && branch == 'ECE') {
 		subjects = [
 			'Radar & TV Engineering',
 			'Mems And Nanotechnology',
@@ -151,7 +151,7 @@ const Home = () => {
 			'Fabrication Lab',
 			'Industrial Economics & Management',
 		];
-	} else if (semester === 3 && branch === 'EE') {
+	} else if (semester == 3 && branch == 'EE') {
 		subjects = [
 			'Advance Mathematics',
 			'Technical Communication',
@@ -162,7 +162,7 @@ const Home = () => {
 			'Electrical Machine 1',
 			'Electromagnetic fields',
 		];
-	} else if (semester === 4 && branch === 'EE') {
+	} else if (semester == 4 && branch == 'EE') {
 		subjects = [
 			'Economics',
 			'Technical Communication',
@@ -172,7 +172,7 @@ const Home = () => {
 			'Electronics measurements and instrumentations',
 			'Analog and digital communication',
 		];
-	} else if (semester === 5 && branch === 'EE') {
+	} else if (semester == 5 && branch == 'EE') {
 		subjects = [
 			'Electrical Materials',
 			'Power System – I',
@@ -182,7 +182,7 @@ const Home = () => {
 			'Restructured Power System',
 			'Electromagnetic Wave',
 		];
-	} else if (semester === 6 && branch === 'EE') {
+	} else if (semester == 6 && branch == 'EE') {
 		subjects = [
 			'Computer Architecture',
 			'Power System –II',
@@ -192,7 +192,7 @@ const Home = () => {
 			'Power System Planning',
 			'Digital Signal Processing',
 		];
-	} else if (semester === 7 && branch === 'EE') {
+	} else if (semester == 7 && branch == 'EE') {
 		subjects = [
 			'Computer System Engg.',
 			'Computer System Planning',
@@ -203,7 +203,7 @@ const Home = () => {
 			'Computer Aided design of Electrical Engineering',
 			'Economic scope of power system',
 		];
-	} else if (semester === 8 && branch === 'EE') {
+	} else if (semester == 8 && branch == 'EE') {
 		subjects = [
 			'EHV AC/DC Transmission',
 			'Electric Drives And Their Control',
@@ -213,7 +213,7 @@ const Home = () => {
 			'Power System Transients',
 			'',
 		];
-	} else if (semester === 3 && branch === 'ME') {
+	} else if (semester == 3 && branch == 'ME') {
 		subjects = [
 			' ADVANCE ENGINEERING MATHEMATICS-I',
 			'TECHNICAL COMMUNICATION',
@@ -224,7 +224,7 @@ const Home = () => {
 			' MECHANICS OF SOLIDS ',
 			'',
 		];
-	} else if (semester === 4 && branch === 'ME') {
+	} else if (semester == 4 && branch == 'ME') {
 		subjects = [
 			'Data Analytics',
 			'Managerial Economics And Financial Accounting',
@@ -234,7 +234,7 @@ const Home = () => {
 			'Manufacturing Processes',
 			'Theory Of Machines',
 		];
-	} else if (semester === 5 && branch === 'ME') {
+	} else if (semester == 5 && branch == 'ME') {
 		subjects = [
 			'Mechatronic Systems',
 			'Heat Transfer',
@@ -244,7 +244,7 @@ const Home = () => {
 			'Steam Engineering',
 			'Automobile Engineering',
 		];
-	} else if (semester === 6 && branch === 'ME') {
+	} else if (semester == 6 && branch == 'ME') {
 		subjects = [
 			'Measurement And Metrology',
 			'Computer Integrated Manufacturing Systems (CIMS)',
@@ -254,7 +254,7 @@ const Home = () => {
 			'Refrigeration And Air Conditioning',
 			'Non-Conventional Machining Methods',
 		];
-	} else if (semester === 7 && branch === 'ME') {
+	} else if (semester == 7 && branch == 'ME') {
 		subjects = [
 			'Finite Element Methods',
 			'Refrigeration And Air Conditioning',
@@ -264,7 +264,7 @@ const Home = () => {
 			'Micro And Nano Manufacturing',
 			'Robotics',
 		];
-	} else if (semester === 8 && branch === 'ME') {
+	} else if (semester == 8 && branch == 'ME') {
 		subjects = [
 			'COMPUTER INTEGRATED MANUFACTURING SYSTEMS',
 			'LAWS FOR ENGINEERS',
@@ -274,7 +274,7 @@ const Home = () => {
 			'TOTAL QUALITY MANAGEMENT',
 			'CAM LAB',
 		];
-	} else if (semester === 3 && branch === 'CIVIL') {
+	} else if (semester == 3 && branch == 'CIVIL') {
 		subjects = [
 			'3CE2-01: ADVANCE ENGINEERING MATHEMATICS-I. ...',
 			'3CE1-02/4CE1-02: TECHNICAL COMMUNICATION. ...',
@@ -283,7 +283,7 @@ const Home = () => {
 			'3CE4-06: FLUID MECHANICS. ...',
 			'3CE4-08: ENGINEERING GEOLOGY',
 		];
-	} else if (semester === 4 && branch === 'CIVIL') {
+	} else if (semester == 4 && branch == 'CIVIL') {
 		subjects = [
 			'Advance Engineering Mathematics-II',
 			'Managerial Economics And Financial Accounting',
@@ -292,7 +292,7 @@ const Home = () => {
 			'Strength Of Materials',
 			'Hydraulics Engineering',
 		];
-	} else if (semester === 5 && branch === 'CIVIL') {
+	} else if (semester == 5 && branch == 'CIVIL') {
 		subjects = [
 			'Theory Of Structures–I',
 			'Environmental Engineering-I',
@@ -303,7 +303,7 @@ const Home = () => {
 			'Advanced Concrete Technology',
 			'Solid Waste Management',
 		];
-	} else if (semester === 6 && branch === 'CIVIL') {
+	} else if (semester == 6 && branch == 'CIVIL') {
 		subjects = [
 			'Theory Of Structures-II',
 			'Geotechnical Engineering-II',
@@ -314,7 +314,7 @@ const Home = () => {
 			'Rock Mechanics',
 			'Repair And Rehabilitation Of Buildings',
 		];
-	} else if (semester === 7 && branch === 'CIVIL') {
+	} else if (semester == 7 && branch == 'CIVIL') {
 		subjects = [
 			'Water Resources Engineering-I',
 			'Design Of Steel Structures-I',
@@ -325,7 +325,7 @@ const Home = () => {
 			'Design Of Pre‐Stressed Concrete Structures',
 			'Rural Water Supply And Sanitation',
 		];
-	} else if (semester === 8 && branch === 'CIVIL') {
+	} else if (semester == 8 && branch == 'CIVIL') {
 		subjects = [
 			'Water Resources Engineering-II',
 			' Design Of Steel Structures–II ',
@@ -337,21 +337,21 @@ const Home = () => {
 		];
 	}
 
-	// const handleChange = (event) => {
-	// 	filterNotes({ branch, semester, subject });
-	// 	console.log('array', state.postArray);
-	// 	state.postArray.map((post, index) => {
-	// 		return <Card post={post} />;
-	// 	});
-	// };
+	const handleChange = (event) => {
+		filterNotes({ branch, semester, subject });
+		console.log('array', state.postArray);
+		state.postArray.map((post, index) => {
+			return <Card post={post} />;
+		});
+	};
 	const uploadNotes = () => {
 		console.log('test');
 		if (!localStorage.getItem('token')) {
 			console.log('yi');
-			return <matchRoutes to="/signin" />;
+			return <Redirect to="/signin" />;
 			// return <Link to="/signin" />;
 		} else {
-			return <matchRoutes to={`/user/post/${localStorage.getItem('user')}`} />;
+			return <Redirect to={`/user/post/${localStorage.getItem('user')}`} />;
 		}
 	};
 
@@ -361,7 +361,7 @@ const Home = () => {
 				<div className="absolute inset-0 bg-gradient-to-l from-transparent to-black opacity-60"></div>
 				<div class=" absolute top-1/2 transform -translate-y-1/2 ml-16 md:w-1/2 ">
 					<h1 className="filter drop-shadow-xl pt-5 md:pt-0 md:text-5xl text-3xl font-extrabold text-secondary font-heading tracking-wide">
-						Welcome to Last Minute Notes
+						Welcome to RTU-Notes
 					</h1>
 					<br />
 					<br />

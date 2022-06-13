@@ -3,10 +3,10 @@ import React, { useState, useContext } from 'react';
 import { Context as NotesContext } from '../context/notesContext';
 import PostForm from './PostForm';
 // import classes from './pro.css';
-import { Link, NavLink } from 'react-router-dom';
+import { Redirect, NavLink } from 'react-router-dom';
 
 const Profile = () => {
-	// const { getUserNotes, state } = useContext(NotesContext);
+	const { getUserNotes, state } = useContext(NotesContext);
 	// console.log(state.profileArray);
 	const [isFillForm, setIsFillForm] = useState(false);
 	const [loadPost, setLoadPost] = useState(false);
@@ -26,7 +26,7 @@ const Profile = () => {
 	// console.log(userId);
 
 	const routeRedirect = () => {
-		return <Link to={`/user/post/${userId}`} />;
+		return <Redirect to={`/user/post/${userId}`} />;
 	};
 
 	return (

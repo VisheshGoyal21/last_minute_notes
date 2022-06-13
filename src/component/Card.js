@@ -1,5 +1,5 @@
-import React, { useContext} from 'react';
-// import { API } from '../backend';
+import React, { useContext, useEffect, useState } from 'react';
+import { API } from '../backend';
 import { Context as NotesContext } from '../context/notesContext';
 
 const Card = (props) => {
@@ -42,8 +42,8 @@ const Card = (props) => {
 						Get Notes
 					</a>
 				</button>
-				{(post.user === localStorage.getItem('user') ||
-					localStorage.getItem('role') === 1) && (
+				{(post.user == localStorage.getItem('user') ||
+					localStorage.getItem('role') == 1) && (
 					<button
 						onClick={() => {
 							removeNotes({ postId });
