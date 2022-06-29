@@ -511,7 +511,7 @@ const Home = () => {
 							clip-rule="evenodd"
 						/>
 					</svg>{' '}
-					by Manish Motwani and Lavesh Garg
+					by Vishesh Goyal and Kashin Gupta
 				</center>
 			</div>
 		</div>

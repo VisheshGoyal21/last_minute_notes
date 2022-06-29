@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 // import './signUpForm.css';
 import { Context as authContext } from '../context/authContext';
 import { Redirect } from 'react-router-dom';
-import { isAuthenticated } from '../middlewares/authMiddleware';
+import { useSignup } from '../middlewares/authMiddleware';
 
 export default function SignUpForm() {
 	const [name, setName] = useState('');
@@ -10,14 +10,14 @@ export default function SignUpForm() {
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 
-	const { signup, state } = useContext(authContext);
+	const { signup, isPending, error } = useSignup()
 
 	// if (state.didRedirect) {
 	//   return <Redirect to="/" />;
 	// }
-	if (isAuthenticated()) {
-		return <Redirect to="/" />;
-	}
+	// if (isAuthenticated()) {
+	// 	return <Redirect to="/" />;
+	// }
 
 	return (
 		<div className="flex flex-row items-center min-h-screen justify-around ">
@@ -65,7 +65,7 @@ export default function SignUpForm() {
 				</label>
 				<input
 					class="text-base py-2 border-b border-gray-300 focus:outline-none focus:border-indigo-500"
-					type="text"
+					type="email"
 					placeholder="ex: mail@gmail.com"
 					onChange={(event) => {
 						setEmail(event.target.value);
@@ -83,21 +83,31 @@ export default function SignUpForm() {
 					}}></input>
 				<br />
 
-				<button
+				{!isPending && <button
 					className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-full "
-					onClick={() =>
-						signup({
-							name: name,
-							lastname: lastname,
-							email: email,
-							password: password,
-						})
-					}>
+					// onClick={() =>
+					// 	signup({
+					// 		name: name,
+					// 		lastname: lastname,
+					// 		email: email,
+					// 		password: password,
+					// 	})}
+					>
 					<h3 className="my-3">SignUp</h3>
-				</button>
-				<div className="text-danger font-bold error ">
+				</button>}
+				{isPending && <button 
+					className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-full ">
+					<h3 className="my-3">Loading</h3>
+				</button>}
+				{/* <div className="text-danger font-bold error ">
 					{state.errorMessageSignup ? <div>{state.errorMessageSignup}</div> : null}
-				</div>
+				</div> */}
+
+				{
+					<div className="text-danger font-bold error ">
+						{ error && <p>{error}</p> }
+					</div>
+				}
 			</div>
 		</div>
 	);
