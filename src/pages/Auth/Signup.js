@@ -22,10 +22,10 @@ export default function Signup() {
       <div className="flex-grow flex-col text-center relative invisible md:visible">
         <div className="bg-signUpImage bg-cover min-h-screen bg-center opacity-80 flex items-center justify-center">
           <div className="absolute z-1 px-6 py-10">
-            <h1 className="mt-6 text-5xl font-bold text-gray-100 mb-6">
-              Welcome Back!
+            <h1 className="mt-6 text-5xl font-bold text-black-100 mb-6">
+              Welcome!
             </h1>
-            <p className="mt-2 text-xl text-gray-200">
+            <p className="mt-2 text-xl text-black-200">
               Create an Account to upload notes!
             </p>
           </div>
@@ -92,15 +92,16 @@ export default function Signup() {
             />
           </label>
 				  
-				  <br />
+				  {/* <br /> */}
 
-          { !isPending && <button 
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-full ">
-              <h3 className="my-3">SignUp</h3>
-              </button> }
-          { isPending && <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold rounded-full " disabled>
-            <h3 className="my-3">Loading</h3>
-            </button> }
+          {!isPending && <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5">
+            <h3 className="">SignUp</h3>
+          </button>}
+          {isPending && <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 rounded-full mt-5" disabled>
+            <h3 className="">Loading</h3>
+          </button>}
           { error && <p>{error}</p> }
         </form>
       </div>

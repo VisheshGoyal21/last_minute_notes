@@ -1,6 +1,6 @@
 // import React, { useState, useEffect, useContext } from 'react';
 // import Progress from 'react-progressbar';
-// import firebase from '../firebase';
+// // import firebase from '../firebase';
 // import { Context as NotesContext } from '../context/notesContext';
 // import { useParams } from 'react-router-dom';
 
